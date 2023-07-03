@@ -24,5 +24,10 @@ def main(
     typer.echo(response.text)
 
 
-if __name__ == "__main__":
+def main_wrapper() -> None:
+    """A wrapper to run :func:`main` for the Poetry script system."""
     typer.run(main)
+
+
+if __name__ == "__main__":
+    main_wrapper()

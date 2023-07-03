@@ -9,13 +9,13 @@ def main(
     url: str,
     method: HTTPMethod = Option(HTTPMethod.GET, "--method", "-m"),
     headers: list[str] = Option([], "--header", "-h"),
-    data: str = Option(None, "--data", "-d"),
+    body: str = Option(None, "--body", "-b"),
 ) -> None:
     response = requests.request(
         url=url,
         method=method,
         headers=dict(header.split(":") for header in headers),
-        data=data,
+        data=body,
     )
 
     typer.echo(f"{response.status_code} {response.reason}")

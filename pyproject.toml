@@ -1,10 +1,12 @@
 [tool.poetry]
-name = "shttp"
+name = "shttp-cli"
 version = "0.1.0"
+repository = "https://github.com/interrrp/shttp"
 description = "A command-line HTTP client."
 authors = ["int <int@addictedto.coffee>"]
 license = "GPL-3.0-or-later"
 readme = "README.md"
+packages = [{ include = "shttp" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"

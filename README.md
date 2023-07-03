@@ -5,7 +5,7 @@
 shttp is a Python script. You may install it using [pip](https://pip.pypa.io/en/stable/):
 
 ```sh
-pip install s-http
+pip install shttp-cli
 ```
 
 ## Basic usage

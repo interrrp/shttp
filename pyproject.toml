@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "shttp"
+version = "0.1.0"
+description = "A command-line HTTP client."
+authors = ["int <int@addictedto.coffee>"]
+license = "GPL-3.0-or-later"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.4.1"
+black = "^23.3.0"
+ruff = "^0.0.275"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

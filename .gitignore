@@ -1,0 +1,9 @@
+# IDE-specific files
+.vscode/
+.idea/
+
+# Python-related files
+**/__pycache__/
+**/*.py[cod]
+.venv/
+.mypy_cache

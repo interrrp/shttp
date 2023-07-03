@@ -33,3 +33,7 @@ shttp -m POST http://httpbin.org/post
 ```sh
 shttp -m POST http://httpbin.org/post -d '{"foo": "bar"}'
 ```
+
+## Licensing
+
+This code is released under the [GPLv3 license](./LICENSE).

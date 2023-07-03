@@ -15,13 +15,27 @@ def main(
     response = requests.request(
         url=url,
         method=method,
-        headers=dict(header.split(":") for header in headers),
+        headers=parse_headers(headers),
         params=dict(param.split("=") for param in params),
         data=body,
     )
 
     typer.echo(f"{response.status_code} {response.reason}")
     typer.echo(response.text)
+
+
+def parse_headers(headers_arg: list[str]) -> dict[str, str]:
+    """Parse the :code:`headers` argument into a dictionary.
+
+    :param headers_arg: A list of headers in the format :code:`key: value` (whitespace
+        around the colon are stripped).
+    """
+
+    headers = {}
+    for header in headers_arg:
+        key, value = header.split(":", 1)
+        headers[key.strip()] = value.strip()
+    return headers
 
 
 def main_wrapper() -> None:

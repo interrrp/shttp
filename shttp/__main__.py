@@ -1,3 +1,4 @@
+import requests
 import typer
 from typer import Option
 
@@ -10,10 +11,15 @@ def main(
     headers: list[str] = Option([], "--header", "-h"),
     data: str = Option(None, "--data", "-d"),
 ) -> None:
-    print(f"URL: {url}")
-    print(f"Method: {method}")
-    print(f"Headers: {headers}")
-    print(f"Data: {data}")
+    response = requests.request(
+        url=url,
+        method=method,
+        headers=dict(header.split(":") for header in headers),
+        data=data,
+    )
+
+    typer.echo(f"{response.status_code} {response.reason}")
+    typer.echo(response.text)
 
 
 if __name__ == "__main__":
